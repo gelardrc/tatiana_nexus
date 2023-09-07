@@ -24,6 +24,8 @@ Instalar o pacote nexus  ( sugiro criar outro catkin workspace )
 > git clone tatiana_nexus
 >
 > source ../devel/setup.bash
+>
+> 
 
 
 
