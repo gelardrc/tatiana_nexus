@@ -13,53 +13,6 @@
       </attenuation>
       <direction>-0.5 0.1 -0.9</direction>
     </light>
-    <model name='ground_plane'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>100 100</size>
-            </plane>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>100</mu>
-                <mu2>50</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>100 100</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/Grey</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
     <atmosphere type='adiabatic'/>
@@ -81,128 +34,47 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
-    <model name='ambulance'>
+    <model name='grass_plane'>
       <static>1</static>
-      <link name='link'>
+      <link name='grass'>
         <collision name='collision'>
           <geometry>
-            <mesh>
-              <scale>0.0254 0.0254 0.0254</scale>
-              <uri>model://ambulance/meshes/ambulance.obj</uri>
-            </mesh>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>500 500</size>
+            </plane>
           </geometry>
-          <max_contacts>10</max_contacts>
           <surface>
+            <friction>
+              <ode>
+                <mu>0.5</mu>
+                <mu2>0.5</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
             <contact>
               <ode/>
             </contact>
             <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
           </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <scale>0.0254 0.0254 0.0254</scale>
-              <uri>model://ambulance/meshes/ambulance.obj</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-3.73545 1.7356 0 0 -0 0</pose>
-    </model>
-    <model name='Fast Food'>
-      <static>1</static>
-      <link name='link'>
-        <pose frame=''>0 0 3.15931 0 -0 0</pose>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <scale>3 3 2</scale>
-              <uri>model://fast_food/meshes/fast_food.dae</uri>
-            </mesh>
-          </geometry>
           <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
         </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <scale>3 3 2</scale>
-              <uri>model://fast_food/meshes/fast_food.dae</uri>
-            </mesh>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://fast_food/materials/scripts</uri>
-              <uri>model://fast_food/materials/textures</uri>
-              <name>FastFood/Diffuse</name>
-            </script>
-            <shader type='normal_map_tangent_space'>
-              <normal_map>FastFood_Normal.png</normal_map>
-            </shader>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-1.55624 15.8563 0 0 -0 0</pose>
-    </model>
-    <model name='asphalt_plane'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
+        <visual name='visual_0'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
           <cast_shadows>0</cast_shadows>
           <geometry>
-            <box>
-              <size>20 20 0.1</size>
-            </box>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>500 500</size>
+            </plane>
           </geometry>
           <material>
             <script>
-              <uri>model://asphalt_plane/materials/scripts</uri>
-              <uri>model://asphalt_plane/materials/textures</uri>
-              <name>vrc/asphalt</name>
+              <uri>model://vrc_driving_terrain/materials/scripts</uri>
+              <uri>model://vrc_driving_terrain/materials/textures</uri>
+              <name>vrc/grass</name>
             </script>
           </material>
         </visual>
@@ -210,48 +82,18 @@
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
-      <pose frame=''>-0.305292 1.30377 0 0 -0 0</pose>
+      <pose frame=''>-0.017831 0.031874 0 0 -0 0</pose>
     </model>
     <state world_name='default'>
-      <sim_time>63 846000000</sim_time>
-      <real_time>64 298360071</real_time>
-      <wall_time>1694086792 568518919</wall_time>
-      <iterations>63846</iterations>
-      <model name='Fast Food'>
-        <pose frame=''>-1.55624 15.8563 0 0 -0 0</pose>
+      <sim_time>50 874000000</sim_time>
+      <real_time>51 181675204</real_time>
+      <wall_time>1696075814 316721550</wall_time>
+      <iterations>50874</iterations>
+      <model name='grass_plane'>
+        <pose frame=''>-0.017831 0.031874 0 0 -0 0</pose>
         <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>-1.55624 15.8563 3.15931 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='ambulance'>
-        <pose frame=''>-3.73545 1.7356 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>-3.73545 1.7356 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='asphalt_plane'>
-        <pose frame=''>-0.305292 1.30377 0 0 -0 0</pose>
-        <scale>2.24837 2.38469 1</scale>
-        <link name='link'>
-          <pose frame=''>-0.305292 1.30377 0 0 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='ground_plane'>
-        <pose frame=''>0 0 0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>0 0 0 0 -0 0</pose>
+        <link name='grass'>
+          <pose frame=''>-0.017831 0.031874 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -263,7 +105,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>35.3073 -1.04727 38.4171 0 0.967643 2.79619</pose>
+        <pose frame=''>16.6186 -15.8634 12.2856 0 0.371643 2.25219</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
